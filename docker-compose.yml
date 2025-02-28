@@ -2,6 +2,13 @@ services:
   nextapp:
     container_name: nextapp
     image: nextapp
-    build: .
+    environment:
+      - WATCHPACK_POLLING=true
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules 
     ports:
       - '3000:3000'
