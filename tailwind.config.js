@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       primary: ['var(--font-funnel-display)'],
+      secondary: ['var(--font-redhat-mono)'],
     },
     extend: {},
   },

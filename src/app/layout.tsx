@@ -21,6 +21,10 @@ const montserrat = localFont({
   src: './fonts/Montserrat-VariableFont_wght.ttf',
   variable: '--font-montserrat',
 });
+const redHatMono = localFont({
+  src: './fonts/RedHatMono-VariableFont_wght.ttf',
+  variable: '--font-redhat-mono',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -38,7 +42,7 @@ export default function RootLayout({
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${funnelDisplay.variable} ${montserrat.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${funnelDisplay.variable} ${montserrat.variable} ${redHatMono.variable}`}
       >
         {children}
       </body>
