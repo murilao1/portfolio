@@ -1,8 +1,10 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, stagger, useAnimate, useInView } from 'motion/react';
+import { Typer } from '@/app/components/typer';
 
 export default function Header() {
+  const [shouldType, setShouldType] = useState(false);
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
 
@@ -18,6 +20,7 @@ export default function Header() {
       },
     );
     await animate('ul', { scale: 0.5 }, { duration: 0.3, ease: 'easeInOut' });
+    setShouldType(true);
   };
 
   useEffect(() => {
@@ -31,8 +34,8 @@ export default function Header() {
       ref={scope}
       className='relative flex min-h-[100dvh] min-w-[100dvw] items-center justify-start gap-16 p-20'
     >
-      <motion.ul className='flex flex-auto origin-left flex-col justify-center font-primary text-8xl font-bold'>
-        <div className='flex flex-row gap-10'>
+      <motion.ul className='absolute left-32 flex w-full origin-left flex-col justify-center font-primary font-bold md:text-6xl lg:text-7xl xl:text-8xl'>
+        <div className='flex flex-row md:gap-8 lg:gap-9 xl:gap-10'>
           <li className='h-[110px] overflow-hidden'>
             <motion.span className='inline-block'>
               <span className='transition-all duration-500 ease-in-out hover:font-black'>
@@ -65,6 +68,16 @@ export default function Header() {
           </li>
         </div>
       </motion.ul>
+      <div className='absolute right-32 flex w-1/3 flex-col'>
+        <Typer
+          className='opacity-1 flex flex-1 font-secondary text-xl'
+          shouldType={shouldType}
+        >
+          Hello!\n I am a web developer based in São Paulo, SP - Brazil.\n I
+          really enjoy building good looking and well animated websites.\n Know
+          more about me and my projects below.
+        </Typer>
+      </div>
     </section>
   );
 }
