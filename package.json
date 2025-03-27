@@ -12,6 +12,7 @@
     "styled-components": "^6"
   },
   "dependencies": {
+    "lenis": "^1.2.3",
     "motion": "^11.13.5",
     "next": "15.0.4",
     "react": "^19.0.0",

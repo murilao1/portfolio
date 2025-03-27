@@ -20,6 +20,7 @@ export default function Header() {
       },
     );
     await animate('ul', { scale: 0.5 }, { duration: 0.3, ease: 'easeInOut' });
+
     setShouldType(true);
   };
 
@@ -32,6 +33,7 @@ export default function Header() {
   return (
     <section
       ref={scope}
+      id='header'
       className='relative flex min-h-[100dvh] min-w-[100dvw] items-center justify-start gap-16 p-20'
     >
       <motion.ul className='absolute left-32 flex w-full origin-left flex-col justify-center font-primary font-bold md:text-6xl lg:text-7xl xl:text-8xl'>
@@ -68,7 +70,7 @@ export default function Header() {
           </li>
         </div>
       </motion.ul>
-      <div className='absolute right-32 flex w-1/3 flex-col'>
+      <div className='2xl:2-1/2 absolute right-32 flex w-1/3 flex-col 2xl:w-1/2'>
         <Typer
           className='opacity-1 flex flex-1 font-secondary text-xl'
           shouldType={shouldType}

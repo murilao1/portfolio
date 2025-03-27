@@ -8,11 +8,14 @@ export default function Intro() {
   useEffect(() => {
     if (!isInView) return;
 
-    animate(scope.current, { opacity: 1 }, { duration: 2 });
+    animate(scope.current, { opacity: 1 }, { duration: 0.5 });
   }, [isInView]);
 
   return (
-    <section className='flex min-h-[100dvh] min-w-[100dvw] items-center justify-center gap-16 p-20'>
+    <section
+      id='intro'
+      className='flex min-h-[100dvh] min-w-[100dvw] items-center justify-center gap-16 p-20'
+    >
       <p className='font-secondary text-3xl opacity-0' ref={scope}>
         Hello! I am a web developer based in São Paulo, SP - Brazil.
         <br />
